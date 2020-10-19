@@ -1,0 +1,37 @@
+<div class="fields-box relative">
+  <div class="board">
+  <div *ngFor="let row of arrayTwo(3)" class="row">
+    <div *ngFor="let col of arrayTwo(3)"
+      (click)="handleFieldClick($event, row, col)"
+      class="field relative" [class]="board[row][col]"
+    >
+    <span class="center symbol" *ngIf="board[row][col] === 'x'">X</span>
+    <span class="center symbol" *ngIf="board[row][col] === 'o'">O</span>
+    </div>
+  </div>
+</div>
+</div>
+<app-modal>
+  <div modalTitle  >
+    Winner <span [class.color-danger]="currentPlayer.symbol === 'x'"
+    [class.color-success]="currentPlayer.symbol === 'o'" > {{ currentPlayer.name }} </span> </div>
+  <div modalContent class="relative" style="height: 100px;" >
+    <div class="flex center">
+    <div class="color-danger">
+      {{ player1.winCounter }}
+    </div>
+    <span>-</span>
+    <div class="color-gray">
+      {{ tie }}
+    </div>
+    <span>-</span>
+    <div class="color-success">
+      {{ player2.winCounter  }}
+    </div>
+  </div>
+</div>
+  <div modalFooter class="flex" >
+      <button class="btn procced m-r-10" (click)="resetGame()"> Restart Game </button>
+      <button class="btn procced" (click)="nextGame()"> Next game </button>
+  </div>
+</app-modal>

@@ -1,0 +1,67 @@
+@import './../../../vars';
+
+.menu {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    .menu-right, .menu-left  {
+        width: 50%;
+        height: 100%;   
+        position: relative;
+
+        div:not(.player-name) {
+            position: absolute;
+        }
+
+        div.active {
+            background: #faa307;
+        } 
+
+       .menu-option-human , .menu-option-computer {
+            left: 20%;
+            background: #457b9d;
+            transform: translateY(-50%);
+            width: 60%;
+            padding: 10px;
+            border-radius: $borderRadius;
+            color: #1d3557;
+            font-size: $fontSize;
+       }
+
+        .menu-option-human {
+            top: 50%;
+        }
+
+        .menu-option-computer {
+            top: 60%;
+        }
+
+       .player-name {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            
+            input {
+                font-size: $fontSize;
+                width: 200px;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .player-name {   
+            input {
+                width: 130px !important;
+            }
+        }
+    }
+
+    button {
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

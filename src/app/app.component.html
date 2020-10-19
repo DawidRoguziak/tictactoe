@@ -1,0 +1,8 @@
+<menu-component *ngIf="currentPlayer === null"
+  (setPLayer)="setPLayer($event)"
+  (closeMenu)="startGame()" ></menu-component>
+<game-component *ngIf="currentPlayer !== null"
+  (resetGame)="resetGame($event)"
+  [currentPlayer]="currentPlayer"
+  [player1]="player1"
+  [player2]="player2"></game-component>

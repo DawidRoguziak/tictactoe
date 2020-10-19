@@ -1,0 +1,35 @@
+<div class="menu">
+    <div class="menu-left">
+
+
+        <div class="player-name"> 
+        <input type="text" [(ngModel)]="player1Name">
+        </div>
+
+        <div (click)="handlePlayerChoose($event,'x','human')"
+         [class.active]="leftSide === 'human'" 
+         class="menu-option-human"> Human </div>
+        <div (click)="handlePlayerChoose($event,'x','computer')" 
+        class="menu-option-computer"
+        [class.active]="leftSide === 'computer'" > Computer </div>
+
+    </div>
+    <div class="menu-right">
+
+        <div class="player-name"> 
+            <input type="text" [(ngModel)]="player2Name">
+        </div>
+
+        <div (click)="handlePlayerChoose($event,'y','human')"
+        [class.active]="rightSide === 'human'"
+        class="menu-option-human" > Human </div>
+        <div (click)="handlePlayerChoose($event,'y','computer')"
+        [class.active]="rightSide === 'computer'"
+         class="menu-option-computer" > Computer </div>
+
+    </div>
+
+    <button (click)="startGame()" type="button" class="btn "  [class.success]="leftSide !== null && rightSide !== null" [class.disabled]="leftSide === null || rightSide === null">
+        Start game
+    </button>
+</div>

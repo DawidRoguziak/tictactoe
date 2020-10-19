@@ -1,0 +1,14 @@
+
+<div *ngIf="open" class="modal">
+    <div class="modal-title">
+        <ng-content select="[modalTitle]"></ng-content>
+    </div>
+    <div class="modal-content">
+        <ng-content select="[modalContent]"></ng-content>
+    </div>
+    <div class="modal-footer">
+        <ng-content select="[modalFooter]"></ng-content>
+    </div>
+</div>
+
+<div *ngIf="open" class="mask"></div>

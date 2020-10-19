@@ -1,0 +1,87 @@
+@import './vars';
+
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background: $backgroundColor;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+.btn{
+    background: $backgroundColor;
+    border: 2px solid #f1faee;
+    color: #f1faee;
+    border-radius: $borderRadius;
+  
+    font-size: 30px;
+    padding: 10px;
+    color: $defaultFontColor;
+
+    &.success {
+        border: 2px solid $succesColor;
+        color: $succesColor;
+        background: $succesColor;
+        color:$defaultFontColor;
+    }
+
+    &.danger {
+        border: 2px solid $dangerColor;
+        color: $dangerColor;
+        background: $dangerColor;
+        color: $defaultFontColor;
+    }
+
+    &.procced {
+        border: 2px solid $proccedColor;
+        background: $proccedColor;
+        color: $defaultFontColor;
+    }
+
+    &.disabled {
+        border: 2px solid #8d99ae !important;
+        color: #8d99ae !important;
+
+        &:hover {
+            background: $backgroundColor !important;
+            cursor: not-allowed;
+        }
+    }
+  
+}
+
+.relative {
+    position: relative;
+}
+
+.flex {
+    display: flex;
+}
+
+.m-r-10 {
+    margin-right: 10px;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.color-danger {
+    color: $dangerColor;
+}
+
+.color-success {
+    color: $succesColor;
+}
+
+.color-gray {
+    color: $grayColor;
+}
